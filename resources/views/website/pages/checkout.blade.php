@@ -2,7 +2,7 @@
 
 @section('content')
 @php
-$currency = env('APP_CURRENCY','USD');
+$currency = env('APP_CURRENCY','PKR');
 $cart     = $cart ?? session('cart', []);
 @endphp
 

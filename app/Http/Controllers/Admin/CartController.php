@@ -208,7 +208,7 @@ class CartController extends Controller
         }
 
         if ($allFlag) {
-            $bundleDiscount = round($subtotal * (float)config('website.pages.checkout', 0.20), 2);
+            $bundleDiscount = round($subtotal * (float)config('website.pages.checkout', 0.57), 2);
         }
 
         $total = round(max($subtotal - ($personalDiscountTotal + $couponDiscount + $bundleDiscount), 0.0), 2);

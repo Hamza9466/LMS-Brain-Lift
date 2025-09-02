@@ -61,7 +61,7 @@
                                     @if(!empty($course->is_free) || (isset($course->price) && (float)$course->price == 0))
                                         Free
                                     @else
-                                        ${{ number_format((float)($course->price ?? 0), 2) }}
+                                        {{ number_format((float)($course->price ?? 0), 2) }}
                                     @endif
                                 </td>
                                 <td class="text-center">

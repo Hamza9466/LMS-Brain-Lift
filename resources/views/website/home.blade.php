@@ -122,7 +122,7 @@
                                                 <input class="form-check-input text-black border-1 border-black" type="checkbox" id="all_courses_register" name="all_courses" value="1"
                                                        {{ old('all_courses') ? 'checked' : '' }}>
                                                 <h6 class="form-check-label pt-6" for="all_courses_register" style="margin-top:10px; margin-left: 20px;">
-                                                    Enroll in <strong>All Courses</strong> (save {{ $allCoursesDiscountPct }}%)
+                                                    Enroll in <strong>All Courses</strong> (save {{ 56 }}%)
                                                 </h6>
                                             </div>
                                             <label class="form-label fw-medium">Select Course</label>
@@ -208,7 +208,7 @@
                                             <div class="form-check form-switch d-flex align-items-center gap-2 mb-2">
                                                 <input class="form-check-input text-black border-1 border-black" type="checkbox" id="all_courses_login" name="all_courses" value="1">
                                                 <h6 class="form-check-label" for="all_courses_login" style="margin-top:17px; margin-left: 20px;">
-                                                    Enroll in <strong>All Courses</strong> (save {{ $allCoursesDiscountPct }}%)
+                                                    Enroll in <strong>All Courses</strong> (save {{ 56 }}%)
                                                 </h6>
                                             </div>
 
@@ -1069,7 +1069,7 @@ document.addEventListener('DOMContentLoaded', function () {
 <!-- ================================= testimonials Section End ========================================= -->
     
     <!-- ================================= Blog Section Start ========================================= -->
-<section class="blog py-120 mash-bg-main mash-bg-main-two position-relative">
+{{-- <section class="blog py-120 mash-bg-main mash-bg-main-two position-relative">
 <img src="{{ asset('assets/website/images/home/shape2.png') }}" alt="" class="shape six animation-scalation">
 <img src="{{ asset('assets/website/images/home/shape6.png') }}" alt="" class="shape four animation-rotation">
 
@@ -1205,7 +1205,7 @@ document.addEventListener('DOMContentLoaded', function () {
             </div>
         </div>
     </div>
-</section>
+</section> --}}
 <!-- ================================= Blog Section End ========================================= -->
 
 
@@ -1222,7 +1222,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                     <span class="w-8 h-8 bg-white rounded-circle"></span>
                                     <h5 class="text-white mb-0">Get Certificate</h5>
                                 </div>
-                                <h2 class="text-white mb-40 fw-medium wow bounceIn">Get Quality Skills Certificate From the EduAll</h2>
+                                <h2 class="text-white mb-40 fw-medium wow bounceIn">Get Quality Skills Certificate From the LMS Brain Lift</h2>
                                 <a href="" class="btn btn-white rounded-pill flex-align d-inline-flex gap-8 hover-bg-main-800 wow bounceInUp">
                                     Get Started Now
                                     <i class="ph-bold ph-arrow-up-right d-flex text-lg"></i>
