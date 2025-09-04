@@ -20,79 +20,110 @@ class EnrollController extends Controller
     }
 
     /** Register then log in; if not from cart, add chosen course or ALL courses; go to checkout */
-   
-public function register(Request $request)
-{
-    $fromCart = $request->boolean('from_cart');
+    public function register(Request $request)
+    {
+        // Keep the Register tab active if validation fails
+        session()->flash('auth_tab', 'register');
 
-    // normalize checkbox -> 1 or null
-    $request->merge(['all_courses' => $request->has('all_courses') ? 1 : null]);
+        $fromCart = $request->boolean('from_cart');
 
-    $request->validate([
-        'first_name'   => ['required','string','max:100'],
-        'last_name'    => ['required','string','max:100'],
-        'email'        => ['required','email','max:190', Rule::unique('users','email')],
-        'password'     => ['required','min:6','confirmed'],
+        // Normalize checkbox -> 1 or null so "required_without:all_courses" works reliably
+        $request->merge(['all_courses' => $request->has('all_courses') ? 1 : null]);
 
-        // key: course_id NOT required when all_courses is present
-        'all_courses'  => ['nullable','in:1'],
-        'course_id'    => ['required_without:all_courses','nullable','integer','exists:courses,id'],
-    ]);
+        $validated = $request->validate([
+            'first_name'  => ['required','string','max:100'],
+            'last_name'   => ['required','string','max:100'],
+            'email'       => ['required','email','max:190', Rule::unique('users','email')],
+            'password'    => ['required','min:6','confirmed'],
 
-    // ... create & login user as you already do ...
+            // key: course_id NOT required when all_courses is present
+            'all_courses' => ['nullable','in:1'],
+            'course_id'   => ['required_without:all_courses','nullable','integer','exists:courses,id'],
 
-    if ($request->boolean('all_courses')) {
-        $this->replaceCartWithAllCourses();
-        session(['all_courses' => true]);
-    } else {
-        session()->forget('all_courses');
-        if (!$fromCart && $request->filled('course_id')) {
-            $this->addCourseToCart((int)$request->course_id);
+            // optional
+            'from_cart'   => ['nullable'],
+        ]);
+
+        // Create & log in user
+        $user = User::create([
+            'first_name' => $validated['first_name'],
+            'last_name'  => $validated['last_name'],
+            'email'      => $validated['email'],
+            'password'   => Hash::make($validated['password']), // safe even if you also use 'hashed' cast
+            // 'role'    => 'student', // uncomment if you store a role
+        ]);
+
+        Auth::login($user);
+        $request->session()->regenerate();
+
+        // Build cart intent
+        if ($request->boolean('all_courses')) {
+            $this->replaceCartWithAllCourses();
+            session(['all_courses' => true]);
+        } else {
+            session()->forget('all_courses');
+            if (!$fromCart && $request->filled('course_id')) {
+                $this->addCourseToCart((int) $request->course_id);
+            }
         }
+
+        return redirect()->route('cart.checkout')->with('success', 'Welcome! Complete your checkout.');
     }
 
-    return redirect()->route('cart.checkout')->with('success', 'Welcome! Complete your checkout.');
-}
+    public function login(Request $request)
+    {
+        // Keep the Login tab active if validation fails
+        session()->flash('auth_tab', 'login');
 
-public function login(Request $request)
-{
-    $fromCart = $request->boolean('from_cart');
+        $fromCart = $request->boolean('from_cart');
 
-    // normalize checkbox -> 1 or null
-    $request->merge(['all_courses' => $request->has('all_courses') ? 1 : null]);
+        // Normalize checkbox -> 1 or null so "required_without:all_courses" works reliably
+        $request->merge(['all_courses' => $request->has('all_courses') ? 1 : null]);
 
-    $request->validate([
-        'email'        => ['required','email'],
-        'password'     => ['required'],
+        $validated = $request->validate([
+            'email'       => ['required','email'],
+            'password'    => ['required'],
 
-        // key: course_id NOT required when all_courses is present
-        'all_courses'  => ['nullable','in:1'],
-        'course_id'    => ['required_without:all_courses','nullable','integer','exists:courses,id'],
-    ]);
+            // key: course_id NOT required when all_courses is present
+            'all_courses' => ['nullable','in:1'],
+            'course_id'   => ['required_without:all_courses','nullable','integer','exists:courses,id'],
 
-    if (!Auth::attempt($request->only('email','password'), false)) {
-        return back()->with('tab', 'login')->with('error', 'Invalid email or password.');
-    }
-    $request->session()->regenerate();
+            // optional
+            'from_cart'   => ['nullable'],
+        ]);
 
-    if ($request->boolean('all_courses')) {
-        $this->replaceCartWithAllCourses();
-        session(['all_courses' => true]);
-    } else {
-        session()->forget('all_courses');
-        if (!$fromCart && $request->filled('course_id')) {
-            $this->addCourseToCart((int)$request->course_id);
+        if (!Auth::attempt($request->only('email','password'), false)) {
+            return back()
+                ->with('tab', 'login')           // your existing flag
+                ->withErrors(['email' => 'Invalid email or password.'])
+                ->withInput();
         }
-    }
 
-    return redirect()->route('cart.checkout')->with('success', 'Signed in. Complete your checkout.');
-}
+        $request->session()->regenerate();
+
+        // Build cart intent
+        if ($request->boolean('all_courses')) {
+            $this->replaceCartWithAllCourses();
+            session(['all_courses' => true]);
+        } else {
+            session()->forget('all_courses');
+            if (!$fromCart && $request->filled('course_id')) {
+                $this->addCourseToCart((int) $request->course_id);
+            }
+        }
+
+        return redirect()->route('cart.checkout')->with('success', 'Signed in. Complete your checkout.');
+    }
 
     /** Already-authenticated -> add course to cart -> checkout */
     public function proceed(Request $request)
     {
-        $request->validate(['course_id' => ['required','integer','exists:courses,id']]);
-        $this->addCourseToCart((int)$request->course_id);
+        $request->validate([
+            'course_id' => ['required','integer','exists:courses,id'],
+        ]);
+
+        $this->addCourseToCart((int) $request->course_id);
+
         return redirect()->route('cart.checkout');
     }
 
@@ -126,7 +157,10 @@ public function login(Request $request)
     /** Replace cart with ALL active courses */
     private function replaceCartWithAllCourses(): void
     {
-        $courses = Course::when(Schema::hasColumn('courses','is_active'), fn($q)=>$q->where('is_active',1))->get();
+        $courses = Course::when(
+            Schema::hasColumn('courses','is_active'),
+            fn($q) => $q->where('is_active', 1)
+        )->get();
 
         $cart = [];
         foreach ($courses as $c) {
