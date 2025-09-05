@@ -414,7 +414,7 @@
                                     <span class="w-8 h-8 bg-white rounded-circle"></span>
                                     <h5 class="text-white mb-0">Get Certificate</h5>
                                 </div>
-                                <h2 class="text-white mb-40 fw-medium">Get Quality Skills Certificate From the EduAll</h2>
+                                <h2 class="text-white mb-40 fw-medium">Get Quality Skills Certificate From the Brain Lift</h2>
                                 <a href="{{ route('CourseGrid') }}" class="btn btn-white rounded-pill flex-align d-inline-flex gap-8">
                                     Get Started Now
                                     <i class="ph-bold ph-arrow-up-right d-flex text-lg"></i>

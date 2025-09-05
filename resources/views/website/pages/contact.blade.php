@@ -59,7 +59,7 @@
                         </span>
                         <div class="flex-grow-1">
                             <h4 class="mb-12">Main Office</h4>
-                            <p class="text-neutral-500">2972 Westheimer Rd. Santa Ana, Illinois 85486 </p>
+                            <p class="text-neutral-500">Location: Johar Town Lahore </p>
                             <a href="javascript:void(0)" class="text-main-600 fw-semibold text-decoration-underline mt-16">Find Location</a>
                         </div>
                     </div>
@@ -71,9 +71,8 @@
                         </span>
                         <div class="flex-grow-1">
                             <h4 class="mb-12">Email Address</h4>
-                            <p class="text-neutral-500">infoexample@gmail.com</p>
-                            <p class="text-neutral-500">example@gmail.com</p>
-                            <a href="mailto:infoexample@gmail.com" class="text-main-600 fw-semibold text-decoration-underline mt-16">Get In Touch</a>
+                            <p class="text-neutral-500">Support@Brainlift.net</p>
+                            <a href="mailto:Support@Brainlift.net" class="text-main-600 fw-semibold text-decoration-underline mt-16">Get In Touch</a>
                         </div>
                     </div>
                 </div>
@@ -84,9 +83,8 @@
                         </span>
                         <div class="flex-grow-1">
                             <h4 class="mb-12">Phone Number</h4>
-                            <p class="text-neutral-500">(505) 555-0125</p>
-                            <p class="text-neutral-500">(406) 555-0120</p>
-                            <a href="tel:(406)555-0120" class="text-main-600 fw-semibold text-decoration-underline mt-16">Contact Us Today!</a>
+                            <p class="text-neutral-500">0309-7530000</p>
+                            <a href="tel:0309-7530000" class="text-main-600 fw-semibold text-decoration-underline mt-16">Contact Us Today!</a>
                         </div>
                     </div>
                 </div>
@@ -226,7 +224,7 @@
                                     <span class="w-8 h-8 bg-white rounded-circle"></span>
                                     <h5 class="text-white mb-0">Get Certificate</h5>
                                 </div>
-                                <h2 class="text-white mb-40 fw-medium wow bounceIn">Get Quality Skills Certificate From the EduAll</h2>
+                                <h2 class="text-white mb-40 fw-medium wow bounceIn">Get Quality Skills Certificate From the LMS Brain Lift</h2>
                                 <a href="" class="btn btn-white rounded-pill flex-align d-inline-flex gap-8 hover-bg-main-800 wow bounceInUp">
                                     Get Started Now
                                     <i class="ph-bold ph-arrow-up-right d-flex text-lg"></i>

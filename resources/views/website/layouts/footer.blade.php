@@ -75,22 +75,21 @@
                         <div class="flex-align gap-20 mb-24">
                             <span class="icon d-flex text-32 text-main-600"><i class="ph ph-phone"></i></span>
                             <div class="">
-                                <a href="tel:(207)555-0119" class="text-neutral-500 d-block hover-text-main-600 mb-4">(207) 555-0119</a>
-                                <a href="tel:(704)555-0127" class="text-neutral-500 d-block hover-text-main-600 mb-0">(704) 555-0127</a>
+                                <a href="tel:0309-7530000" class="text-neutral-500 d-block hover-text-main-600 mb-4"> 0309-7530000</a>
+                                
                             </div>
                         </div>
                         <div class="flex-align gap-20 mb-24">
                             <span class="icon d-flex text-32 text-main-600"><i class="ph ph-envelope-open"></i></span>
                             <div class="">
-                                <a href="mailto:dwallo@gmail.com" class="text-neutral-500 d-block hover-text-main-600 mb-4">dwallo@gmail.com</a>
-                                <a href="mailto:eduAll@gmail.com" class="text-neutral-500 d-block hover-text-main-600 mb-0">eduAll@gmail.com</a>
+                                <a href="mailto:dwallo@gmail.com" class="text-neutral-500 d-block hover-text-main-600 mb-4">Support@Brainlift.net</a>
+                             
                             </div>
                         </div>
                         <div class="flex-align gap-20 mb-24">
                             <span class="icon d-flex text-32 text-main-600"><i class="ph ph-map-trifold"></i></span>
                             <div class="">
-                                <span class="text-neutral-500 d-block mb-4">5488 srker Rd .</span>
-                                <span class="text-neutral-500 d-block mb-0">8745 doer Dr.</span>
+                                <span class="text-neutral-500 d-block mb-4">Location: Johar Town Lahore</span>
                             </div>
                         </div>
                     </div>
@@ -115,7 +114,7 @@
         <div class="bottom-footer bg-main-25 border-top border-dashed border-main-100 border-0 py-32">
             <div class="container container-two">
                 <div class="bottom-footer__inner flex-between gap-3 flex-wrap">
-                    <p class="bottom-footer__text"> Copyright &copy; 2024 <span class="fw-semibold">EduAll</span> All Rights Reserved.</p>
+                    <p class="bottom-footer__text"> Copyright &copy; 2024 <span class="fw-semibold">Brain Lift</span> All Rights Reserved.</p>
                     <div class="footer-links">
                         <a href="#" class="text-neutral-500 hover-text-main-600 hover-text-decoration-underline">Privacy Policy</a>
                         <a href="#" class="text-neutral-500 hover-text-main-600 hover-text-decoration-underline">Terms & Conditions</a>

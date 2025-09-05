@@ -789,7 +789,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         <div class="mb-40">
                             <div class="flex-align gap-8 mb-16 wow bounceInDown">
                                 <span class="w-8 h-8 bg-main-600 rounded-circle"></span>
-                                <h5 class="text-main-600 mb-0 ">About EduAll</h5>
+                                <h5 class="text-main-600 mb-0 ">About Brain Lift</h5>
                             </div>
                             <h2 class="mb-24 wow bounceIn">The Place Where You Can Achieve</h2>
                             <p class="text-neutral-500 text-line-2 wow bounceInUp">Brain Lift, where learning creates opportunities. Whether you are a student, freelancer, or professional, our goal is to help you gain practical skills and achieve real success.</p>
@@ -1023,8 +1023,8 @@ document.addEventListener('DOMContentLoaded', function () {
                             <span class="w-8 h-8 bg-main-600 rounded-circle"></span>
                             <h5 class="text-main-600 mb-0">What Our Students Say</h5>
                         </div>
-                        <h2 class="mb-24 wow bounceIn">Testimonials from Happy Learners for EduAll</h2>
-                        <p class="text-neutral-500 text-line-2 wow bounceInUp">16+ million Students are already learning on EduAll Platform</p>
+                        <h2 class="mb-24 wow bounceIn">Testimonials from Happy Learners for Brain Lift</h2>
+                        <p class="text-neutral-500 text-line-2 wow bounceInUp">16+ million Students are already learning on Brain Lift Platform</p>
                     </div>
 
                     <div class="testimonials__slider">
@@ -1036,7 +1036,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                 <li class="text-warning-600 text-xl d-flex"><i class="ph-fill ph-star"></i></li>
                                 <li class="text-warning-600 text-xl d-flex"><i class="ph-fill ph-star-half"></i></li>
                             </ul>
-                            <p class="text-neutral-700" data-aos="fade-left" data-aos-duration="1200">"Enrolling in courses at EduAll was one of the best decisions I've made for my career. The flexibility of the online learning platform allowed me to study at my own pace while balancing my work”</p>
+                            <p class="text-neutral-700" data-aos="fade-left" data-aos-duration="1200">"Enrolling in courses at Brain Lift was one of the best decisions I've made for my career. The flexibility of the online learning platform allowed me to study at my own pace while balancing my work”</p>
                             <h4 class="mt-48 mb-8" data-aos="fade-left">Kathryn Murphy</h4>
                             <span class="text-neutral-700" data-aos="fade-left">Software Developer</span>
                         </div>
@@ -1048,7 +1048,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                 <li class="text-warning-600 text-xl d-flex"><i class="ph-fill ph-star"></i></li>
                                 <li class="text-warning-600 text-xl d-flex"><i class="ph-fill ph-star-half"></i></li>
                             </ul>
-                            <p class="text-neutral-700" data-aos="fade-left" data-aos-duration="1200">"Signing up for courses at EduAll was quite possibly of the best choice I've made for my vocation. The adaptability of the internet learning stage permitted me to learn at my own speed while adjusting my work"</p>
+                            <p class="text-neutral-700" data-aos="fade-left" data-aos-duration="1200">"Signing up for courses at Brain Lift was quite possibly of the best choice I've made for my vocation. The adaptability of the internet learning stage permitted me to learn at my own speed while adjusting my work"</p>
                             <h4 class="mt-48 mb-8" data-aos="fade-left">John Doe</h4>
                             <span class="text-neutral-700" data-aos="fade-left">UX/UI Designer</span>
                         </div>
